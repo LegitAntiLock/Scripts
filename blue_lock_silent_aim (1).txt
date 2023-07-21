@@ -1,4 +1,4 @@
-.gg/xepau
+
 
 --// KAL SKIDDED THIS SHIT! HE DIDNT MADE THIS BTW
     Settings = {
