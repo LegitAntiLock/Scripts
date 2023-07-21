@@ -1,8 +1,8 @@
-getgenv().RecurringPoint = "UpperTorso"
+getgenv().IdleHitbox = "UpperTorso"
 getgenv().Hitbox = "UpperTorso"
 getgenv().Keybind = "e"
-getgenv().AimbotStrengthAmount = 0.0421
-getgenv().PredictionAmount = 11
+getgenv().Strength = 0.0421
+getgenv().Pred = 11
 getgenv().Radius = 30
 getgenv().UsePrediction = true
 getgenv().AimbotStrength = true
@@ -16,8 +16,8 @@ local NotifyLibrary =
 local Notify = NotifyLibrary.Notify
 Notify(
     {
-        Title = "Tenaki Smooth Lock",
-        Description = "Bruh Tf is this Obfuscator Shitty Asf Cracked By Paws#2140",
+        Title = "Loading Kaid Streamable",
+        Description = "tenaki like smooth lock",
         Duration = 3
     }
 )
@@ -26,7 +26,7 @@ if getgenv().Enabled == true then
 else
     getgenv().Keybind = "*"
 end
-getgenv().CheckIfJumped = true
+getgenv().Airshot = true
 local Players, Uis, RService, SGui =
     game:GetService "Players",
     game:GetService "UserInputService",
@@ -180,21 +180,21 @@ RService.RenderStepped:Connect(
             if AimlockTarget and AimlockTarget.Character and AimlockTarget.Character:FindFirstChild(getgenv().Hitbox) then
                 if getgenv().FirstPerson == true then
                     if CanNotify == true then
-                        if getgenv().UsePrediction == true then
-                            if getgenv().AimbotStrength == true then
+                        if getgenv().Pred == true then
+                            if getgenv().Strength == true then
                                 --// The part we're going to lerp/smoothen \\--
                                 local Main =
                                     CF(
                                     Camera.CFrame.p,
                                     AimlockTarget.Character[getgenv().Hitbox].Position +
-                                        AimlockTarget.Character[getgenv().Hitbox].Velocity / PredictionAmount
+                                        AimlockTarget.Character[getgenv().Hitbox].Velocity / Pred
                                 )
 
                                 --// Making it work \\--
                                 Camera.CFrame =
                                     Camera.CFrame:Lerp(
                                     Main,
-                                    getgenv().AimbotStrengthAmount,
+                                    getgenv().Strength,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
                                 )
@@ -203,11 +203,11 @@ RService.RenderStepped:Connect(
                                     CF(
                                     Camera.CFrame.p,
                                     AimlockTarget.Character[getgenv().Hitbox].Position +
-                                        AimlockTarget.Character[getgenv().Hitbox].Velocity / PredictionAmount
+                                        AimlockTarget.Character[getgenv().Hitbox].Velocity / Pred
                                 )
                             end
-                        elseif getgenv().UsePrediction == false then
-                            if getgenv().AimbotStrength == true then
+                        elseif getgenv().Pred == false then
+                            if getgenv().Strength == true then
                                 --// The part we're going to lerp/smoothen \\--
                                 local Main = CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().Hitbox].Position)
 
@@ -215,7 +215,7 @@ RService.RenderStepped:Connect(
                                 Camera.CFrame =
                                     Camera.CFrame:Lerp(
                                     Main,
-                                    getgenv().AimbotStrengthAmount,
+                                    getgenv().Strength,
                                     Enum.EasingStyle.Elastic,
                                     Enum.EasingDirection.InOut
                                 )
@@ -231,8 +231,17 @@ RService.RenderStepped:Connect(
             if AimlockTarget.Character.HuDDDDDDDDDDWmanoid.FloorMaterial == Enum.Material.Air then
                 getgenv().Hitbox = "UpperTorso"
             else
-                getgenv().Hitbox = getgenv().RecurringPoint
+                getgenv().Hitbox = getgenv().IdleHitbox
             end
         end
     end
+)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))()
+local Notify = NotifyLibrary.Notify
+Notify(
+    {
+        Title = "Loaded",
+        Description = "have fun bro",
+        Duration = 3
+    }
 )
