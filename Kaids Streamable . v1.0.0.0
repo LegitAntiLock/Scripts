@@ -1,0 +1,17 @@
+getgenv().IdleHitbox = "UpperTorso" -- the part it locks on when idle
+getgenv().Hitbox = "UpperTorso" -- the main part it locks onto
+getgenv().Keybind = "q" -- self explanatory 
+getgenv().Strength = 0.0421 -- aimlock strength, self explanatory 
+getgenv().Pred = 11 -- the higher the value the lower the ping
+getgenv().Radius = 50 -- distance, self explanatory 
+-- dont change anything under here except for teamcheck
+getgenv().UsePrediction = true 
+getgenv().AimbotStrength = true
+getgenv().FirstPerson = true
+getgenv().ThirdPerson = true
+getgenv().TeamCheck = false
+getgenv().Enabled = true
+
+--use a silent aim if ur gonna use streamable or use blatant sets, irdc
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LegitAntiLock/Scripts/main/lua.lua"))()
