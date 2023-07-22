@@ -1,15 +1,4 @@
-getgenv().IdleHitbox = "UpperTorso"
-getgenv().Hitbox = "UpperTorso"
-getgenv().Keybind = "e"
-getgenv().Strength = 0.0421
-getgenv().Pred = 11
-getgenv().Radius = 30
-getgenv().UsePrediction = true
-getgenv().AimbotStrength = true
-getgenv().FirstPerson = true
-getgenv().ThirdPerson = true
-getgenv().TeamCheck = false
-getgenv().Enabled = true
+
 
 local NotifyLibrary =
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))()
